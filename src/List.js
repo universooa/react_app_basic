@@ -1,8 +1,7 @@
 import { useParams, useSearchParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const List = () => {
+function List() {
     const { listId } = useParams()
     const [searchParams, setSearchParams] = useSearchParams()
     const offset = searchParams.get('offset')
@@ -36,9 +35,15 @@ const List = () => {
                 </article>
             ))}
             <div>
-                <button onClick={() => movePage(1)}>1</button>
-                <button onClick={() => movePage(2)}>2</button>
-                <button onClick={() => movePage(3)}>3</button>
+                <button type="submit" onClick={() => movePage(1)}>
+                    1
+                </button>
+                <button type="submit" onClick={() => movePage(2)}>
+                    2
+                </button>
+                <button type="submit" onClick={() => movePage(3)}>
+                    3
+                </button>
             </div>
         </section>
     )
