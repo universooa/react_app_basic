@@ -35,13 +35,13 @@ function List() {
                 </article>
             ))}
             <div>
-                <button type="submit" onClick={() => movePage(1)}>
+                <button type="button" onClick={() => movePage(1)}>
                     1
                 </button>
-                <button type="submit" onClick={() => movePage(2)}>
+                <button type="button" onClick={() => movePage(2)}>
                     2
                 </button>
-                <button type="submit" onClick={() => movePage(3)}>
+                <button type="button" onClick={() => movePage(3)}>
                     3
                 </button>
             </div>

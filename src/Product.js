@@ -52,10 +52,10 @@ function Product(props) {
             </ul>
             <ul>
                 <li>
-                    <button type="submit" onClick={() => navigate(-2)}>
+                    <button type="button" onClick={() => navigate(-2)}>
                         Go 2 pages back
                     </button>
-                    <button type="submit" onClick={() => navigate(-1)}>
+                    <button type="button" onClick={() => navigate(-1)}>
                         Go back
                     </button>
                 </li>

@@ -24,26 +24,26 @@ function Counter() {
         <>
             <h2>{state.count}</h2>
             <button
-                type="submit"
+                type="button"
                 onClick={() => dispatch({ type: 'RESET', payload: 0 })}
             >
                 초기화
             </button>
             <button
-                type="submit"
+                type="button"
                 onClick={() => dispatch({ type: 'INCREMENT', payload: 1 })}
             >
                 증가
             </button>
             <button
-                type="submit"
+                type="button"
                 onClick={() => dispatch({ type: 'DECREMENT', payload: 1 })}
             >
                 감소
             </button>
 
             <button
-                type="submit"
+                type="button"
                 onClick={() => dispatch({ type: 'error', payload: 1 })}
             >
                 에러

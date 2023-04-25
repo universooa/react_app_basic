@@ -15,7 +15,7 @@ function UseEffectTest() {
         <div>
             <p>useEffectId:{useEffectId}</p>
             <p>{count}번 클릭!</p>
-            <button type="submit" onClick={countUp}>
+            <button type="button" onClick={countUp}>
                 Click Me
             </button>
         </div>
