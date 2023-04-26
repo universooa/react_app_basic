@@ -8,6 +8,8 @@ import NotFound from './NotFound'
 import List from './List'
 import UseEffectTest from './UseEffectTest'
 import Counter from './Counter'
+import AnimationPage from './AnimationPage'
+import SunRise from './SunRise'
 
 function App() {
     return (
@@ -23,6 +25,8 @@ function App() {
                         element={<UseEffectTest />}
                     />
                     <Route path="/counter" element={<Counter />} />
+                    <Route path="/animation" element={<AnimationPage />} />
+                    <Route path="/animation/sunRise" element={<SunRise />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>

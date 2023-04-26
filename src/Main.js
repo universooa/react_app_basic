@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-function Main(props) {
+function Main() {
     return (
         <>
             <h3>안녕하세요. 메인페이지 입니다.</h3>
@@ -20,6 +20,9 @@ function Main(props) {
                 </Link>
                 <Link to="/counter">
                     <li>Counter</li>
+                </Link>
+                <Link to="/animation">
+                    <li>Animation</li>
                 </Link>
             </ul>
         </>
