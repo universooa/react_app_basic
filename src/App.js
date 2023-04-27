@@ -10,6 +10,8 @@ import UseEffectTest from './UseEffectTest'
 import Counter from './Counter'
 import AnimationPage from './AnimationPage'
 import SunRise from './SunRise'
+import Hello from './Hello'
+import Wrapper from './Wrapper'
 
 function App() {
     return (
@@ -27,11 +29,18 @@ function App() {
                     <Route path="/counter" element={<Counter />} />
                     <Route path="/animation" element={<AnimationPage />} />
                     <Route path="/animation/sunRise" element={<SunRise />} />
+                    <Route
+                        path="/hello"
+                        element={
+                            <Wrapper>
+                                <Hello name="hi" color="red" />
+                            </Wrapper>
+                        }
+                    />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>
         </BrowserRouter>
     )
 }
-
 export default App

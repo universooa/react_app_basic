@@ -24,6 +24,10 @@ function Main() {
                 <Link to="/animation">
                     <li>Animation</li>
                 </Link>
+
+                <Link to="/hello">
+                    <li>Hello</li>
+                </Link>
             </ul>
         </>
     )

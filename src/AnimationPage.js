@@ -9,4 +9,5 @@ function AnimationPage() {
         </ul>
     )
 }
+
 export default AnimationPage
