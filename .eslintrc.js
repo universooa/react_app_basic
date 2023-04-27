@@ -24,6 +24,11 @@ module.exports = {
         'react/jsx-uses-react': 'off',
         'no-unused-vars': 'off',
         'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+        'no-param-reassign': 'off',
+        'import/no-extraneous-dependencies': 'off',
+        'global-require': 'off',
+        'import/no-dynamic-require': 'off',
+        'import/order': 'off',
     },
     settings: {
         react: {

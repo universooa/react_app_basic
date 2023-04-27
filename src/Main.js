@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Wrapper from './Wrapper'
+import Hello from './Hello'
 
 function Main() {
     return (
@@ -28,8 +30,12 @@ function Main() {
                 <Link to="/hello">
                     <li>Hello</li>
                 </Link>
+                <Wrapper>
+                    <Hello />
+                </Wrapper>
             </ul>
         </>
     )
 }
+
 export default Main

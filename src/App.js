@@ -1,6 +1,7 @@
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React from 'react'
+import { hot } from 'react-hot-loader'
 import Header from './Header'
 import Main from './Main'
 import Product from './Product'
@@ -11,7 +12,6 @@ import Counter from './Counter'
 import AnimationPage from './AnimationPage'
 import SunRise from './SunRise'
 import Hello from './Hello'
-import Wrapper from './Wrapper'
 
 function App() {
     return (
@@ -31,11 +31,7 @@ function App() {
                     <Route path="/animation/sunRise" element={<SunRise />} />
                     <Route
                         path="/hello"
-                        element={
-                            <Wrapper>
-                                <Hello name="hi" color="red" />
-                            </Wrapper>
-                        }
+                        element={<Hello name="hi" color="red" />}
                     />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
@@ -43,4 +39,4 @@ function App() {
         </BrowserRouter>
     )
 }
-export default App
+export default hot(module)(App)
