@@ -1,7 +1,18 @@
 import PropTypes from 'prop-types'
+import { useEffect } from 'react'
 
 // eslint-disable-next-line react/prop-types
 function User({ user, onRemove, onToggle }) {
+    useEffect(() => {
+        console.log(user)
+        // console.log('user 값이 설정됨')
+        //
+        // return () => {
+        //     console.log('user가 바뀌기 전')
+        //     console.log(user)
+        // }
+    })
+
     return (
         <div>
             {/* eslint-disable-next-line react/prop-types,jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}

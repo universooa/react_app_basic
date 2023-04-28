@@ -1,6 +1,11 @@
 import UserList from './UserList'
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import CreateUser from './CreateUser'
+
+function countActiveUsers(users) {
+    console.log('활성 사용자 수를 세는 중..')
+    return users.filter((user) => user.active).length
+}
 
 function useRefSample() {
     const [inputs, setInputs] = useState({
@@ -69,6 +74,11 @@ function useRefSample() {
         )
     }
 
+    const count = useMemo(() => countActiveUsers(users), [users])
+
+    /* deps 배열 안에 넣은 내용이 바뀌면 우리가 등록한 함수를 호출해서 값을 연산해주고,
+    만약에 내용이 바뀌지 않았다면 이전에 연산한 값을 재사용 */
+
     return (
         <>
             <CreateUser
@@ -79,6 +89,7 @@ function useRefSample() {
             />
 
             <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
+            <div>활성 사용자 수 :{count}</div>
         </>
     )
 }
