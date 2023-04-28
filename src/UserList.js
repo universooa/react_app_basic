@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useEffect } from 'react'
+import React, { useEffect } from 'react'
 
 // eslint-disable-next-line react/prop-types
 function User({ user, onRemove, onToggle }) {
@@ -55,4 +55,4 @@ function UserList({ users, onRemove, onToggle }) {
         </div>
     )
 }
-export default UserList
+export default React.memo(UserList)

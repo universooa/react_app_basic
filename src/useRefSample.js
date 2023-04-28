@@ -1,5 +1,5 @@
 import UserList from './UserList'
-import { useMemo, useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import CreateUser from './CreateUser'
 
 function countActiveUsers(users) {
@@ -13,13 +13,16 @@ function useRefSample() {
         email: '',
     })
     const { username, email } = inputs
-    const onChange = (e) => {
-        const { name, value } = e.target
-        setInputs({
-            ...inputs,
-            [name]: value,
-        })
-    }
+    const onChange = useCallback(
+        (e) => {
+            const { name, value } = e.target
+            setInputs({
+                ...inputs,
+                [name]: value,
+            })
+        },
+        [inputs]
+    )
 
     const [users, setUsers] = useState([
         {
@@ -43,7 +46,7 @@ function useRefSample() {
     ])
 
     const nextId = useRef(4) // 이 값이 current 가 됨.
-    const onCreate = () => {
+    const onCreate = useCallback(() => {
         const user = {
             id: nextId.current,
             username,
@@ -59,20 +62,26 @@ function useRefSample() {
         })
 
         nextId.current += 1
-    }
+    }, [users, username, email])
 
-    const onRemove = (id) => {
-        // 배열 불변성 유지 위해 특정 조건이 만족하는 원소들만 추출하여 새로운 배열을 만들어줌
-        setUsers(users.filter((user) => user.id !== id))
-    }
+    const onRemove = useCallback(
+        (id) => {
+            // 배열 불변성 유지 위해 특정 조건이 만족하는 원소들만 추출하여 새로운 배열을 만들어줌
+            setUsers(users.filter((user) => user.id !== id))
+        },
+        [users]
+    )
 
-    const onToggle = (id) => {
-        setUsers(
-            users.map((user) =>
-                user.id === id ? { ...user, active: !user.active } : user
+    const onToggle = useCallback(
+        (id) => {
+            setUsers(
+                users.map((user) =>
+                    user.id === id ? { ...user, active: !user.active } : user
+                )
             )
-        )
-    }
+        },
+        [users]
+    )
 
     const count = useMemo(() => countActiveUsers(users), [users])
 
