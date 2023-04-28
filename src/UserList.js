@@ -19,24 +19,7 @@ User.propsTypes = {
     }),
 }
 
-function UserList() {
-    const users = [
-        {
-            id: 1,
-            username: 'sualee',
-            email: 'rkttndk@naver.com',
-        },
-        {
-            id: 2,
-            username: 'star',
-            email: 'star@naver.com',
-        },
-        {
-            id: 3,
-            username: 'moon',
-            email: 'moon@naver.com',
-        },
-    ]
+function UserList({ users }) {
     return (
         <div>
             {users.map((user) => (

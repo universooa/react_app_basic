@@ -14,6 +14,8 @@ import SunRise from './SunRise'
 import Hello from './Hello'
 import InputSample from './inputSample'
 import UserList from './UserList'
+import ReactHookSample from './ReactHookSample'
+import UseRefSample from './useRefSample'
 
 function App() {
     return (
@@ -36,6 +38,11 @@ function App() {
                         element={<Hello name="hi" color="red" />}
                     />
                     <Route path="/inputSample" element={<InputSample />} />
+                    <Route
+                        path="/reactHookSample"
+                        element={<ReactHookSample />}
+                    />
+                    <Route path="/useRefSample" element={<UseRefSample />} />
                     <Route path="/userList" element={<UserList />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>

@@ -37,8 +37,8 @@ function Main() {
                 <Link to="/inputSample">
                     <li>InputSample</li>
                 </Link>
-                <Link to="/userList">
-                    <li>UserList</li>
+                <Link to="/reactHookSample">
+                    <li>reactHookSample</li>
                 </Link>
             </ul>
         </>

@@ -30,6 +30,7 @@ module.exports = {
         'import/no-dynamic-require': 'off',
         'import/order': 'off',
         'no-shadow': 'off',
+        'react/prop-types': 'off',
     },
     settings: {
         react: {
