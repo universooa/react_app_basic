@@ -21,16 +21,19 @@ function useRefSample() {
             id: 1,
             username: 'sualee',
             email: 'rkttndk@naver.com',
+            active: true,
         },
         {
             id: 2,
             username: 'star',
             email: 'star@naver.com',
+            active: false,
         },
         {
             id: 3,
             username: 'moon',
             email: 'moon@naver.com',
+            active: false,
         },
     ])
 
@@ -58,6 +61,14 @@ function useRefSample() {
         setUsers(users.filter((user) => user.id !== id))
     }
 
+    const onToggle = (id) => {
+        setUsers(
+            users.map((user) =>
+                user.id === id ? { ...user, active: !user.active } : user
+            )
+        )
+    }
+
     return (
         <>
             <CreateUser
@@ -67,7 +78,7 @@ function useRefSample() {
                 onCreate={onCreate}
             />
 
-            <UserList users={users} onRemove={onRemove} />
+            <UserList users={users} onRemove={onRemove} onToggle={onToggle} />
         </>
     )
 }
