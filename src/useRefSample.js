@@ -53,6 +53,11 @@ function useRefSample() {
         nextId.current += 1
     }
 
+    const onRemove = (id) => {
+        // 배열 불변성 유지 위해 특정 조건이 만족하는 원소들만 추출하여 새로운 배열을 만들어줌
+        setUsers(users.filter((user) => user.id !== id))
+    }
+
     return (
         <>
             <CreateUser
@@ -62,7 +67,7 @@ function useRefSample() {
                 onCreate={onCreate}
             />
 
-            <UserList users={users} />
+            <UserList users={users} onRemove={onRemove} />
         </>
     )
 }
