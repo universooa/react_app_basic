@@ -10,7 +10,7 @@ function Wrapper({ children }) {
     return <div style={style}>{children}</div>
 }
 Wrapper.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.arrayOf(PropTypes.element),
 }
 
 Wrapper.defaultProps = {
