@@ -13,16 +13,13 @@ function useRefSample() {
         email: '',
     })
     const { username, email } = inputs
-    const onChange = useCallback(
-        (e) => {
-            const { name, value } = e.target
-            setInputs({
-                ...inputs,
-                [name]: value,
-            })
-        },
-        [inputs]
-    )
+    const onChange = useCallback((e) => {
+        const { name, value } = e.target
+        setInputs((inputs) => ({
+            ...inputs,
+            [name]: value,
+        }))
+    }, [])
 
     const [users, setUsers] = useState([
         {
@@ -53,7 +50,7 @@ function useRefSample() {
             email,
         }
 
-        setUsers([...users, user]) // 또는 setUsers(users.concat(user));
+        setUsers((users) => users.concat(user)) // 또는 setUsers(users.concat(user));
         // 배열은 불변성을 지켜주어야함.
 
         setInputs({
@@ -62,26 +59,20 @@ function useRefSample() {
         })
 
         nextId.current += 1
-    }, [users, username, email])
+    }, [username, email])
 
-    const onRemove = useCallback(
-        (id) => {
-            // 배열 불변성 유지 위해 특정 조건이 만족하는 원소들만 추출하여 새로운 배열을 만들어줌
-            setUsers(users.filter((user) => user.id !== id))
-        },
-        [users]
-    )
+    const onRemove = useCallback((id) => {
+        // 배열 불변성 유지 위해 특정 조건이 만족하는 원소들만 추출하여 새로운 배열을 만들어줌
+        setUsers((users) => users.filter((user) => user.id !== id))
+    }, [])
 
-    const onToggle = useCallback(
-        (id) => {
-            setUsers(
-                users.map((user) =>
-                    user.id === id ? { ...user, active: !user.active } : user
-                )
+    const onToggle = useCallback((id) => {
+        setUsers((users) =>
+            users.map((user) =>
+                user.id === id ? { ...user, active: !user.active } : user
             )
-        },
-        [users]
-    )
+        )
+    }, [])
 
     const count = useMemo(() => countActiveUsers(users), [users])
 
