@@ -12,6 +12,7 @@ import Counter from './Counter'
 import AnimationPage from './AnimationPage'
 import SunRise from './SunRise'
 import Hello from './Hello'
+import InputSample from './inputSample'
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                         path="/hello"
                         element={<Hello name="hi" color="red" />}
                     />
+                    <Route path="/inputSample" element={<InputSample />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>

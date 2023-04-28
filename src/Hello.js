@@ -3,7 +3,7 @@ import './Hello.css'
 import PropTypes from 'prop-types'
 
 // eslint-disable-next-line react/prop-types
-function Hello({ color, name }) {
+function Hello({ color, name, isSpecial }) {
     const varName = 'react'
     const style = {
         backgroundColor: 'black',
@@ -14,7 +14,10 @@ function Hello({ color, name }) {
     return (
         <>
             {/* 주석 작성 */}
-            <div style={{ color }}>안녕하세요{name}</div>
+            <div style={{ color }}>
+                {isSpecial && <b>*</b>}
+                안녕하세요{name}
+            </div>
             <div style={style}>{varName}</div>
             <div className="gray-box" />
         </>

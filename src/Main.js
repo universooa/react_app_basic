@@ -31,8 +31,12 @@ function Main() {
                     <li>Hello</li>
                 </Link>
                 <Wrapper>
-                    <Hello />
+                    <Hello isSpecial />
+                    <Hello name="hello2" color="orange" />
                 </Wrapper>
+                <Link to="/inputSample">
+                    <li>InputSample</li>
+                </Link>
             </ul>
         </>
     )
