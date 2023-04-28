@@ -29,6 +29,7 @@ module.exports = {
         'global-require': 'off',
         'import/no-dynamic-require': 'off',
         'import/order': 'off',
+        'no-shadow': 'off',
     },
     settings: {
         react: {
