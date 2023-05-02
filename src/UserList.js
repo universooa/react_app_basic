@@ -1,17 +1,11 @@
 import PropTypes from 'prop-types'
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
+// eslint-disable-next-line import/no-cycle
+import { UserDispatch } from './useRefSample'
 
 // eslint-disable-next-line react/prop-types
-function User({ user, onRemove, onToggle }) {
-    useEffect(() => {
-        console.log(user)
-        // console.log('user 값이 설정됨')
-        //
-        // return () => {
-        //     console.log('user가 바뀌기 전')
-        //     console.log(user)
-        // }
-    })
+const User = React.memo(function User({ user }) {
+    const dispatch = useContext(UserDispatch)
 
     return (
         <div>
@@ -21,18 +15,25 @@ function User({ user, onRemove, onToggle }) {
                     cursor: 'pointer',
                     color: user.active ? 'green' : 'black',
                 }}
-                onClick={() => onToggle(user.id)}
+                onClick={() => {
+                    dispatch({ type: 'TOGGLE_USER', id: user.id })
+                }}
             >
                 {user.username}
             </b>
             {/* eslint-disable-next-line react/prop-types */}
             <span>({user.email})</span>
-            <button type="submit" onClick={() => onRemove(user.id)}>
+            <button
+                type="submit"
+                onClick={() => {
+                    dispatch({ type: 'REMOVE_USER', id: user.id })
+                }}
+            >
                 삭제
             </button>
         </div>
     )
-}
+})
 
 User.propsTypes = {
     user: PropTypes.shape({
@@ -41,16 +42,11 @@ User.propsTypes = {
     }),
 }
 
-function UserList({ users, onRemove, onToggle }) {
+function UserList({ users }) {
     return (
         <div>
             {users.map((user) => (
-                <User
-                    user={user}
-                    key={user.id}
-                    onRemove={onRemove}
-                    onToggle={onToggle}
-                />
+                <User user={user} key={user.id} />
             ))}
         </div>
     )
