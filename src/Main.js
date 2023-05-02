@@ -40,6 +40,9 @@ function Main() {
                 <Link to="/reactHookSample">
                     <li>reactHookSample</li>
                 </Link>
+                <Link to="/randomColors">
+                    <li>randomColors</li>
+                </Link>
             </ul>
         </>
     )

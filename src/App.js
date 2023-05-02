@@ -16,6 +16,7 @@ import InputSample from './inputSample'
 import UserList from './UserList'
 import ReactHookSample from './ReactHookSample'
 import UseRefSample from './useRefSample'
+import RandomColors from './RandomColors'
 
 function App() {
     return (
@@ -44,6 +45,7 @@ function App() {
                     />
                     <Route path="/useRefSample" element={<UseRefSample />} />
                     <Route path="/userList" element={<UserList />} />
+                    <Route path="/randomColors" element={<RandomColors />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </div>

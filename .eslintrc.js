@@ -31,6 +31,7 @@ module.exports = {
         'import/order': 'off',
         'no-shadow': 'off',
         'react/prop-types': 'off',
+        'react/destructuring-assignment': 'off',
     },
     settings: {
         react: {
