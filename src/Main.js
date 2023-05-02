@@ -43,6 +43,9 @@ function Main() {
                 <Link to="/randomColors">
                     <li>randomColors</li>
                 </Link>
+                <Link to="/catchTest">
+                    <li>catchTest</li>
+                </Link>
             </ul>
         </>
     )
