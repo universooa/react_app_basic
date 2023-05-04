@@ -4,9 +4,23 @@ import CheckBox from './components/CheckBox'
 import { useState } from 'react'
 import styled, { css, ThemeProvider } from 'styled-components'
 import StyledButton from './components/StyledButton'
+import Dialog from './components/Dialog'
 
 function CssTest() {
     const [check, setCheck] = useState(false)
+    const [dialog, setDialog] = useState(false)
+
+    const onClick = () => {
+        setDialog(true)
+    }
+    const onConfirm = () => {
+        console.log('확인')
+        setDialog(false)
+    }
+    const onCancel = () => {
+        console.log('취소')
+        setDialog(false)
+    }
     const onChange = (e) => {
         setCheck(e.target.checked)
     }
@@ -98,61 +112,81 @@ function CssTest() {
                         },
                     }}
                 >
-                    <AppBlock>
-                        <ButtonGroup>
-                            <StyledButton size="large">
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton>Styled Button</StyledButton>
-                            <StyledButton size="small">
-                                Styled Button
-                            </StyledButton>
-                        </ButtonGroup>
-                        <ButtonGroup>
-                            <StyledButton color="pink" size="large">
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="pink">
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="pink" size="small">
-                                Styled Button
-                            </StyledButton>
-                        </ButtonGroup>
-                        <ButtonGroup>
-                            <StyledButton color="gray" size="large">
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="gray">
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="gray" size="small">
-                                Styled Button
-                            </StyledButton>
-                        </ButtonGroup>
-                        <ButtonGroup>
-                            <StyledButton color="gray" size="large" outline>
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="gray" outline>
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="gray" size="small" outline>
-                                Styled Button
-                            </StyledButton>
-                        </ButtonGroup>
-                        <ButtonGroup>
-                            <StyledButton color="gray" size="large" fullWidth>
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton color="pink" outline fullWidth>
-                                Styled Button
-                            </StyledButton>
-                            <StyledButton size="small" fullWidth>
-                                Styled Button
-                            </StyledButton>
-                        </ButtonGroup>
-                    </AppBlock>
+                    <>
+                        <AppBlock>
+                            <ButtonGroup>
+                                <StyledButton size="large">
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton>Styled Button</StyledButton>
+                                <StyledButton size="small">
+                                    Styled Button
+                                </StyledButton>
+                            </ButtonGroup>
+                            <ButtonGroup>
+                                <StyledButton color="pink" size="large">
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="pink">
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="pink" size="small">
+                                    Styled Button
+                                </StyledButton>
+                            </ButtonGroup>
+                            <ButtonGroup>
+                                <StyledButton color="gray" size="large">
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="gray">
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="gray" size="small">
+                                    Styled Button
+                                </StyledButton>
+                            </ButtonGroup>
+                            <ButtonGroup>
+                                <StyledButton color="gray" size="large" outline>
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="gray" outline>
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="gray" size="small" outline>
+                                    Styled Button
+                                </StyledButton>
+                            </ButtonGroup>
+                            <ButtonGroup>
+                                <StyledButton
+                                    color="gray"
+                                    size="large"
+                                    fullWidth
+                                >
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton color="pink" outline fullWidth>
+                                    Styled Button
+                                </StyledButton>
+                                <StyledButton
+                                    size="small"
+                                    fullWidth
+                                    onClick={onClick}
+                                >
+                                    삭제
+                                </StyledButton>
+                            </ButtonGroup>
+                        </AppBlock>
+                        <Dialog
+                            title="정말로 삭제하시겠습니까?"
+                            confirmText="삭제"
+                            cancelText="취소"
+                            onConfirm={onConfirm}
+                            onCancel={onCancel}
+                            visible={dialog}
+                        >
+                            데이터를 정말로 삭제하시겠습니까?
+                        </Dialog>
+                    </>
                 </ThemeProvider>
             </div>
             <div className="boxs">
