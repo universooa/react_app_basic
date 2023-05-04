@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React from 'react'
 import { hot } from 'react-hot-loader'
@@ -19,6 +19,7 @@ import UseRefSample from './useRefSample'
 import RandomColors from './RandomColors'
 import ErrorBoundary from './ErrorBoundary'
 import CatchTest from './CatchTest'
+import CssTest from './CssTest'
 
 function App() {
     return (
@@ -62,6 +63,7 @@ function App() {
                             element={<RandomColors />}
                         />
                         <Route path="/catchTest" element={<CatchTest />} />
+                        <Route path="/cssTest" element={<CssTest />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </ErrorBoundary>

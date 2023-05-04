@@ -46,6 +46,9 @@ function Main() {
                 <Link to="/catchTest">
                     <li>catchTest</li>
                 </Link>
+                <Link to="/cssTest">
+                    <li>cssTest</li>
+                </Link>
             </ul>
         </>
     )
