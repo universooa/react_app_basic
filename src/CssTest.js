@@ -2,12 +2,27 @@ import Button from './components/Button'
 import Box from './components/Box'
 import CheckBox from './components/CheckBox'
 import { useState } from 'react'
+import styled, { css } from 'styled-components'
 
 function CssTest() {
     const [check, setCheck] = useState(false)
     const onChange = (e) => {
         setCheck(e.target.checked)
     }
+
+    const Circle = styled.div`
+        width: 5rem;
+        height: 5rem;
+        background: ${(props) => props.color || 'black'};
+        border-radius: 50%;
+
+        ${(props) =>
+            props.huge &&
+            css`
+                width: 10rem;
+                height: 10rem;
+            `}
+    `
 
     return (
         <>
@@ -69,6 +84,9 @@ function CssTest() {
                     <b>check: </b>
                     {check ? 'true' : 'false'}
                 </p>
+            </div>
+            <div className="circles">
+                <Circle color="blue" huge />
             </div>
         </>
     )
