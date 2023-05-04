@@ -1,5 +1,5 @@
 import { MdCheckBox, MdCheckBoxOutlineBlank } from 'react-icons/md'
-import styles from './CheckBox.module.css'
+import styles from './CheckBox.module.scss'
 import classNames from 'classnames/bind'
 
 const cx = classNames.bind(styles)
