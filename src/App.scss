@@ -6,6 +6,10 @@
   margin-top : 4rem;
   padding: 1rem;
   text-align: center;
+
+  .buttons + .buttons {
+    margin-top: 1rem;
+  }
 }
 
 .App-logo {
