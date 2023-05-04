@@ -19,6 +19,12 @@ function CssTest() {
         padding: 1rem;
     `
 
+    const ButtonGroup = styled.div`
+        & + & {
+            margin-top: 1rem;
+        }
+    `
+
     const Circle = styled.div`
         width: 5rem;
         height: 5rem;
@@ -93,9 +99,37 @@ function CssTest() {
                     }}
                 >
                     <AppBlock>
-                        <StyledButton>Styled Button</StyledButton>
-                        <StyledButton color="pink">Styled Button</StyledButton>
-                        <StyledButton color="gray">Styled Button</StyledButton>
+                        <ButtonGroup>
+                            <StyledButton size="large">
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton>Styled Button</StyledButton>
+                            <StyledButton size="small">
+                                Styled Button
+                            </StyledButton>
+                        </ButtonGroup>
+                        <ButtonGroup>
+                            <StyledButton color="pink" size="large">
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton color="pink">
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton color="pink" size="small">
+                                Styled Button
+                            </StyledButton>
+                        </ButtonGroup>
+                        <ButtonGroup>
+                            <StyledButton color="gray" size="large">
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton color="gray">
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton color="gray" size="small">
+                                Styled Button
+                            </StyledButton>
+                        </ButtonGroup>
                     </AppBlock>
                 </ThemeProvider>
             </div>
