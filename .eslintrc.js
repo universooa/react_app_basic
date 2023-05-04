@@ -32,6 +32,7 @@ module.exports = {
         'no-shadow': 'off',
         'react/prop-types': 'off',
         'react/destructuring-assignment': 'off',
+        'react/jsx-props-no-spreading': 'off',
     },
     settings: {
         react: {
