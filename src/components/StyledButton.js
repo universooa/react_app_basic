@@ -6,13 +6,24 @@ const colorStyles = css`
         const selected = theme.palette[color]
         return css`
             background: ${selected};
-          &:hover{
-            background: ${lighten(0.1, selected)};
-          }
-          &:active{
-            background: ${darken(0.1, selected)};
-          }
-        }
+            &:hover {
+                background: ${lighten(0.1, selected)};
+            }
+            &:active {
+                background: ${darken(0.1, selected)};
+            }
+
+            ${(props) =>
+                props.outline &&
+                css`
+                    color: ${selected};
+                    background: none;
+                    border: 1px solid ${selected};
+                    &:hover {
+                        background: ${selected};
+                        color: white;
+                    }
+                `}
         `
     }}
 `
@@ -64,9 +75,9 @@ const Button = styled.button`
     }
 `
 
-function StyledButton({ children, color, size, ...rest }) {
+function StyledButton({ children, color, size, outline, ...rest }) {
     return (
-        <Button color={color} size={size} {...rest}>
+        <Button color={color} size={size} outline={outline} {...rest}>
             {children}
         </Button>
     )

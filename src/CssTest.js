@@ -130,6 +130,17 @@ function CssTest() {
                                 Styled Button
                             </StyledButton>
                         </ButtonGroup>
+                        <ButtonGroup>
+                            <StyledButton color="gray" size="large" outline>
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton color="gray" outline>
+                                Styled Button
+                            </StyledButton>
+                            <StyledButton color="gray" size="small" outline>
+                                Styled Button
+                            </StyledButton>
+                        </ButtonGroup>
                     </AppBlock>
                 </ThemeProvider>
             </div>
