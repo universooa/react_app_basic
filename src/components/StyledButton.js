@@ -49,6 +49,19 @@ const sizeStyles = css`
     `}
 `
 
+const fullWidthStyle = css`
+    ${(props) =>
+        props.fullWidth &&
+        css`
+            width: 100%;
+            justify-content: center;
+            & + & {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        `}
+`
+
 const Button = styled.button`
     /* 공통 스타일 */
     display: inline-flex;
@@ -73,11 +86,19 @@ const Button = styled.button`
     & + & {
         margin-left: 1rem;
     }
+
+    ${fullWidthStyle}
 `
 
-function StyledButton({ children, color, size, outline, ...rest }) {
+function StyledButton({ children, color, size, outline, fullWidth, ...rest }) {
     return (
-        <Button color={color} size={size} outline={outline} {...rest}>
+        <Button
+            color={color}
+            size={size}
+            outline={outline}
+            fullWidth={fullWidth}
+            {...rest}
+        >
             {children}
         </Button>
     )
