@@ -1,6 +1,14 @@
 import Button from './components/Button'
+import Box from './components/Box'
+import CheckBox from './components/CheckBox'
+import { useState } from 'react'
 
 function CssTest() {
+    const [check, setCheck] = useState(false)
+    const onChange = (e) => {
+        setCheck(e.target.checked)
+    }
+
     return (
         <>
             <div className="buttons">
@@ -49,6 +57,18 @@ function CssTest() {
                 <Button size="large" fullWidth color="pink">
                     BUTTON
                 </Button>
+            </div>
+            <div className="boxs">
+                <Box>Box</Box>
+            </div>
+            <div className="checkboxes">
+                <CheckBox onChange={onChange} checked={check}>
+                    다음 약관에 모두 동의
+                </CheckBox>
+                <p>
+                    <b>check: </b>
+                    {check ? 'true' : 'false'}
+                </p>
             </div>
         </>
     )
