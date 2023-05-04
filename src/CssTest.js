@@ -2,13 +2,22 @@ import Button from './components/Button'
 import Box from './components/Box'
 import CheckBox from './components/CheckBox'
 import { useState } from 'react'
-import styled, { css } from 'styled-components'
+import styled, { css, ThemeProvider } from 'styled-components'
+import StyledButton from './components/StyledButton'
 
 function CssTest() {
     const [check, setCheck] = useState(false)
     const onChange = (e) => {
         setCheck(e.target.checked)
     }
+
+    const AppBlock = styled.div`
+        width: 512px;
+        margin: 0 auto;
+        margin-top: 4rem;
+        border: 1px solid black;
+        padding: 1rem;
+    `
 
     const Circle = styled.div`
         width: 5rem;
@@ -72,6 +81,23 @@ function CssTest() {
                 <Button size="large" fullWidth color="pink">
                     BUTTON
                 </Button>
+            </div>
+            <div className="styledButtons">
+                <ThemeProvider
+                    theme={{
+                        palette: {
+                            blue: '#228be6',
+                            gray: '#495057',
+                            pink: '#f06595',
+                        },
+                    }}
+                >
+                    <AppBlock>
+                        <StyledButton>Styled Button</StyledButton>
+                        <StyledButton color="pink">Styled Button</StyledButton>
+                        <StyledButton color="gray">Styled Button</StyledButton>
+                    </AppBlock>
+                </ThemeProvider>
             </div>
             <div className="boxs">
                 <Box>Box</Box>
