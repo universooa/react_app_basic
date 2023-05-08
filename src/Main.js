@@ -50,7 +50,7 @@ function Main() {
                     <li>cssTest</li>
                 </Link>
                 <Link to="/globalStyle">
-                    <li>globalStyle</li>
+                    <li>To do List</li>
                 </Link>
             </ul>
         </>
