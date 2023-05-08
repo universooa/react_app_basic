@@ -49,6 +49,9 @@ function Main() {
                 <Link to="/cssTest">
                     <li>cssTest</li>
                 </Link>
+                <Link to="/globalStyle">
+                    <li>globalStyle</li>
+                </Link>
             </ul>
         </>
     )
