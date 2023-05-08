@@ -21,6 +21,7 @@ import ErrorBoundary from './ErrorBoundary'
 import CatchTest from './CatchTest'
 import CssTest from './CssTest'
 import GlobalStyle from './components/GlobalStyle'
+import ApiTest from './ApiTest'
 
 function App() {
     return (
@@ -66,6 +67,7 @@ function App() {
                         <Route path="/catchTest" element={<CatchTest />} />
                         <Route path="/cssTest" element={<CssTest />} />
                         <Route path="/globalStyle" element={<GlobalStyle />} />
+                        <Route path="/apiTest" element={<ApiTest />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </ErrorBoundary>

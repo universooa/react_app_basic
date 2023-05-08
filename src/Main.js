@@ -52,6 +52,9 @@ function Main() {
                 <Link to="/globalStyle">
                     <li>To do List</li>
                 </Link>
+                <Link to="/apiTest">
+                    <li>API Test</li>
+                </Link>
             </ul>
         </>
     )
