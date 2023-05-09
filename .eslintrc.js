@@ -33,6 +33,7 @@ module.exports = {
         'react/prop-types': 'off',
         'react/destructuring-assignment': 'off',
         'react/jsx-props-no-spreading': 'off',
+        'default-param-last': 'off',
     },
     settings: {
         react: {
