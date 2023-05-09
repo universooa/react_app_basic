@@ -1,7 +1,12 @@
 import Users from './Users'
+import { UsersProvider } from './UsersContext'
 
 function ApiTest() {
-    return <Users />
+    return (
+        <UsersProvider>
+            <Users />
+        </UsersProvider>
+    )
 }
 
 export default ApiTest
