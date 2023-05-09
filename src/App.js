@@ -22,6 +22,7 @@ import CatchTest from './CatchTest'
 import CssTest from './CssTest'
 import GlobalStyle from './components/GlobalStyle'
 import ApiTest from './ApiTest'
+import ReduxTest from './ReduxTest'
 
 function App() {
     return (
@@ -68,6 +69,7 @@ function App() {
                         <Route path="/cssTest" element={<CssTest />} />
                         <Route path="/globalStyle" element={<GlobalStyle />} />
                         <Route path="/apiTest" element={<ApiTest />} />
+                        <Route path="/reduxTest" element={<ReduxTest />} />
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </ErrorBoundary>
@@ -75,4 +77,5 @@ function App() {
         </BrowserRouter>
     )
 }
+
 export default hot(module)(App)

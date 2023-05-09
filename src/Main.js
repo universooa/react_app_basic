@@ -55,6 +55,9 @@ function Main() {
                 <Link to="/apiTest">
                     <li>API Test</li>
                 </Link>
+                <Link to="/reduxTest">
+                    <li>redux Test</li>
+                </Link>
             </ul>
         </>
     )
