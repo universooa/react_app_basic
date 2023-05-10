@@ -12,7 +12,6 @@ function CounterContainer() {
         }),
         shallowEqual
     )
-
     // useDispatch는 리덕스 스토어의 dispatch를 함수에서 사용할 수 있게 해주는 Hook
     const dispatch = useDispatch()
     // 각 액션들을 디스패치하는 함수
