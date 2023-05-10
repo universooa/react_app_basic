@@ -5,9 +5,10 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import * as Sentry from '@sentry/react'
 import rootReducer from './modules'
-import { legacy_createStore as createStore } from 'redux'
+import { applyMiddleware, legacy_createStore as createStore } from 'redux'
 import { Provider } from 'react-redux'
-import { composeWithDevTools } from '@redux-devtools/extension'
+import { logger } from 'redux-logger/src'
+import { composeWithDevTools } from 'redux-devtools-extension'
 
 Sentry.init({
     dsn: 'https://6fd01d1e166e40639eea99913e5194c7@o4505112906039296.ingest.sentry.io/4505112907546624',
@@ -19,7 +20,10 @@ Sentry.init({
     replaysOnErrorSampleRate: 1.0, // If you're not already sampling the entire session, change the sample rate to 100% when sampling sessions where errors occur.
 })
 
-const store = createStore(rootReducer, composeWithDevTools())
+const store = createStore(
+    rootReducer,
+    composeWithDevTools(applyMiddleware(logger))
+) // 여러개의 미들웨어 적용 가능
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
