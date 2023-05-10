@@ -23,6 +23,9 @@ import CssTest from './CssTest'
 import GlobalStyle from './components/GlobalStyle'
 import ApiTest from './ApiTest'
 import ReduxTest from './ReduxTest'
+import ReduxMiddleWareTest from './ReduxMiddleWareTest'
+import PostListPage from './pages/PostListPage'
+import PostPage from './pages/PostPage'
 
 function App() {
     return (
@@ -70,6 +73,20 @@ function App() {
                         <Route path="/globalStyle" element={<GlobalStyle />} />
                         <Route path="/apiTest" element={<ApiTest />} />
                         <Route path="/reduxTest" element={<ReduxTest />} />
+                        <Route
+                            path="/reduxMiddleWareTest"
+                            element={<ReduxMiddleWareTest />}
+                        />
+                        <Route
+                            path="/postListPage"
+                            exact
+                            element={<PostListPage />}
+                        />
+                        <Route
+                            path="/postListPage/:id"
+                            element={<PostPage />}
+                        />
+
                         <Route path="*" element={<NotFound />} />
                     </Routes>
                 </ErrorBoundary>

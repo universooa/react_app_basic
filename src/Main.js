@@ -58,6 +58,15 @@ function Main() {
                 <Link to="/reduxTest">
                     <li>redux Test</li>
                 </Link>
+                <Link to="/reduxMiddleWareTest">
+                    <li>reduxMiddleWare Test</li>
+                </Link>
+                <Link to="/postListPage">
+                    <li>postListPage Test</li>
+                </Link>
+                <Link to="/postListPage/1">
+                    <li>postListPage 1 Test</li>
+                </Link>
             </ul>
         </>
     )
