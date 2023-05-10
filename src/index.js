@@ -9,6 +9,7 @@ import { applyMiddleware, legacy_createStore as createStore } from 'redux'
 import { Provider } from 'react-redux'
 import { logger } from 'redux-logger/src'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import ReduxThunk from 'redux-thunk'
 
 Sentry.init({
     dsn: 'https://6fd01d1e166e40639eea99913e5194c7@o4505112906039296.ingest.sentry.io/4505112907546624',
@@ -22,7 +23,7 @@ Sentry.init({
 
 const store = createStore(
     rootReducer,
-    composeWithDevTools(applyMiddleware(logger))
+    composeWithDevTools(applyMiddleware(ReduxThunk, logger))
 ) // 여러개의 미들웨어 적용 가능
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
