@@ -78,8 +78,7 @@ function App() {
                             element={<ReduxMiddleWareTest />}
                         />
                         <Route
-                            path="/postListPage"
-                            exact
+                            path="/postListPage/*"
                             element={<PostListPage />}
                         />
                         <Route

@@ -55,6 +55,9 @@ const initialState = {
     posts: reducerUtils.initial(),
     post: {},
 }
+export const goToHome = (navigate) => (dispatch, getState) => {
+    navigate('/') // home으로 이동
+}
 
 export default function posts(state = initialState, action) {
     switch (action.type) {

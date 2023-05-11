@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
-import { getPost } from '../modules/posts'
+import { getPost, goToHome } from '../modules/posts'
 import Post from '../components/Post'
+import { useNavigate } from 'react-router-dom'
 
 function PostContainer({ postId }) {
     const { data, loading, error } = useSelector(
@@ -12,6 +13,7 @@ function PostContainer({ postId }) {
         error: null,
     }
     const dispatch = useDispatch()
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (data) return
@@ -22,7 +24,15 @@ function PostContainer({ postId }) {
     if (error) return <div>에러 발생!</div>
     if (!data) return null
 
-    return <Post post={data} />
+    return (
+        <>
+            <button type="button" onClick={() => dispatch(goToHome(navigate))}>
+                홈으로 이동
+            </button>
+
+            <Post post={data} />
+        </>
+    )
 }
 
 export default PostContainer
