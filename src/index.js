@@ -10,6 +10,12 @@ import { Provider } from 'react-redux'
 import { logger } from 'redux-logger/src'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import ReduxThunk from 'redux-thunk'
+import axios from 'axios'
+
+axios.default.baseURL =
+    process.env.NODE_ENV === 'development'
+        ? '/'
+        : 'https://blog.naver.com/rkttndk'
 
 Sentry.init({
     dsn: 'https://6fd01d1e166e40639eea99913e5194c7@o4505112906039296.ingest.sentry.io/4505112907546624',
