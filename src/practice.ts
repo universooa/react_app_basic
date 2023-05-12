@@ -45,12 +45,13 @@ shapes.forEach((shape) => {
 })
 
 // 일반 객체를 interface로 타입 설정
-interface Person {
+type Person = {
     name: string
     age?: number // 물음표-> option
 }
 
-interface Developer extends Person {
+type Developer = Person & {
+    // &는 intersection으로서 두개 이상의 타입들을 합쳐줌
     skills: string[]
 }
 
@@ -64,4 +65,73 @@ const expert: Developer = {
     skills: ['javascript', 'react'],
 }
 
-const people: Person[] = [person, expert]
+type People = Person[]
+const people: People = [person, expert]
+
+type Color = 'red' | 'orange' | 'yellow'
+const color: Color = 'red'
+const colors: Color[] = ['red', 'orange']
+
+// Generics 사용
+
+function merge<A, B>(a: A, b: B): A & B {
+    return {
+        ...a,
+        ...b,
+    }
+}
+
+const merged = merge({ foo: 1 }, { bar: 1 })
+
+function wrap<T>(param: T) {
+    return {
+        param,
+    }
+}
+
+const wrapped = wrap(10)
+//
+// interface Items<T> {
+//     list: T[]
+// }
+//
+// const items: Items<string> = {
+//     list: ['a', 'b', 'c'],
+// }
+
+type Items<T> = {
+    list: T[]
+}
+
+const items: Items<string> = {
+    list: ['a', 'b', 'c'],
+}
+
+class Queue<T> {
+    list: T[] = []
+
+    get length() {
+        return this.list.length
+    }
+
+    enqueue(item: T) {
+        this.list.push(item)
+    }
+
+    dequeue() {
+        return this.list.shift()
+    }
+}
+
+const queue = new Queue<number>()
+
+queue.enqueue(0)
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.enqueue(4)
+console.log(queue.dequeue())
+console.log(queue.dequeue())
+console.log(queue.dequeue())
+console.log(queue.dequeue())
+console.log(queue.dequeue())
