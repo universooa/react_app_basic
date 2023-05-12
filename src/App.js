@@ -1,4 +1,3 @@
-import './App.scss'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import React from 'react'
 import { hot } from 'react-hot-loader'
@@ -26,6 +25,7 @@ import ReduxTest from './ReduxTest'
 import ReduxMiddleWareTest from './ReduxMiddleWareTest'
 import PostListPage from './pages/PostListPage'
 import PostPage from './pages/PostPage'
+import './App.scss'
 
 function App() {
     return (

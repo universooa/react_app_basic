@@ -1,6 +1,3 @@
-import PropTypes from 'prop-types'
-import Hello from './Hello'
-
 // eslint-disable-next-line react/prop-types
 function Wrapper({ children }) {
     const style = {
@@ -9,12 +6,14 @@ function Wrapper({ children }) {
     }
     return <div style={style}>{children}</div>
 }
-Wrapper.propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element),
-}
 
-Wrapper.defaultProps = {
-    children: <Hello />,
-}
+//
+// Wrapper.propTypes = {
+//     children: PropTypes.arrayOf(PropTypes.element),
+// }
+//
+// Wrapper.defaultProps = {
+//     children: <Hello />,
+// }
 
 export default Wrapper

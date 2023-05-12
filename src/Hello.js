@@ -1,6 +1,5 @@
-import './Hello.css'
 // eslint-disable-next-line import/no-extraneous-dependencies
-import PropTypes from 'prop-types'
+import './Hello.css'
 
 // eslint-disable-next-line react/prop-types
 function Hello({ color, name, isSpecial }) {
@@ -24,13 +23,14 @@ function Hello({ color, name, isSpecial }) {
     )
 }
 
-Hello.defaultProps = {
-    color: 'pink',
-    name: 'default',
-}
-
-Hello.propsTypes = {
-    color: PropTypes.string,
-    name: PropTypes.string,
-}
+//
+// Hello.defaultProps = {
+//     color: 'pink',
+//     name: 'default',
+// }
+//
+// Hello.propsTypes = {
+//     color: PropTypes.string,
+//     name: PropTypes.string,
+// }
 export default Hello
