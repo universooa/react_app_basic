@@ -26,6 +26,8 @@ import ReduxMiddleWareTest from './ReduxMiddleWareTest'
 import PostListPage from './pages/PostListPage'
 import PostPage from './pages/PostPage'
 import './App.scss'
+// eslint-disable-next-line import/extensions,import/no-unresolved
+import TypeApp from './TypeApp'
 
 function App() {
     return (
@@ -85,6 +87,7 @@ function App() {
                             path="/postListPage/:id"
                             element={<PostPage />}
                         />
+                        <Route path="/typeScriptApp" element={<TypeApp />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Routes>

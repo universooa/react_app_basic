@@ -67,6 +67,9 @@ function Main() {
                 <Link to="/postListPage/1">
                     <li>postListPage 1 Test</li>
                 </Link>
+                <Link to="/typeScriptApp">
+                    <li>typeScript App</li>
+                </Link>
             </ul>
         </>
     )
