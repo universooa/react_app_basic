@@ -8,7 +8,9 @@ function returnNothing() {
     console.log('I am just saying hello world')
 }
 class Circle {
+    // `implements` 키워드를 사용하여 해당 클래스가 Shape interface의 조건을 충족하겠다는 것을 명시
     constructor(radius) {
+        this.radius = radius
         this.radius = radius
     }
     // 너비를 가져오는 함수
@@ -20,6 +22,8 @@ class Rectangle {
     constructor(width, height) {
         this.width = width
         this.height = height
+        this.width = width
+        this.height = height
     }
     getArea() {
         return this.width * this.height
@@ -29,3 +33,12 @@ const shapes = [new Circle(5), new Rectangle(10, 5)]
 shapes.forEach((shape) => {
     console.log(shape.getArea())
 })
+const person = {
+    name: '수아',
+    age: 20,
+}
+const expert = {
+    name: '경수',
+    skills: ['javascript', 'react'],
+}
+const people = [person, expert]

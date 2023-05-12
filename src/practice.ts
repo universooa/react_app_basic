@@ -16,9 +16,8 @@ interface Shape {
 
 class Circle implements Shape {
     // `implements` 키워드를 사용하여 해당 클래스가 Shape interface의 조건을 충족하겠다는 것을 명시
-    radius: number
 
-    constructor(radius: number) {
+    constructor(public radius: number) {
         this.radius = radius
     }
 
@@ -29,11 +28,7 @@ class Circle implements Shape {
 }
 
 class Rectangle implements Shape {
-    width: number
-
-    height: number
-
-    constructor(width: number, height: number) {
+    constructor(private width: number, private height: number) {
         this.width = width
         this.height = height
     }
@@ -48,3 +43,25 @@ const shapes: Shape[] = [new Circle(5), new Rectangle(10, 5)]
 shapes.forEach((shape) => {
     console.log(shape.getArea())
 })
+
+// 일반 객체를 interface로 타입 설정
+interface Person {
+    name: string
+    age?: number // 물음표-> option
+}
+
+interface Developer extends Person {
+    skills: string[]
+}
+
+const person: Person = {
+    name: '수아',
+    age: 20,
+}
+
+const expert: Developer = {
+    name: '경수',
+    skills: ['javascript', 'react'],
+}
+
+const people: Person[] = [person, expert]
