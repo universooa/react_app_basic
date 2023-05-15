@@ -35,6 +35,8 @@ module.exports = {
         'react/destructuring-assignment': 'off',
         'react/jsx-props-no-spreading': 'off',
         'default-param-last': 'off',
+        'import/extensions': 'off',
+        'import/no-unresolved': 'off',
     },
     settings: {
         react: {

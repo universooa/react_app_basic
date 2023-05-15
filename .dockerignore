@@ -1,6 +1,6 @@
 # .dockerignore
 node_modules
-Dockerfile
+Dockerfile.dev
 .git
 .gitignore
 .dockerignore

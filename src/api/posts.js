@@ -27,7 +27,8 @@ const posts = [
 export const getPosts = async () => {
     // await sleep(500)
     // return posts
-    const response = await axios.get('/posts') // full로 안쓰면 프록시가 아닌 기존 도메인으로 호출
+    const response = await axios.get('http://localhost:4000/posts') // full로 안쓰면 프록시가 아닌 기존 도메인으로 호출 -> json-server 실행해야함
+    // npx json-server ./data.json --port 4000
     return response.data
 }
 
@@ -35,6 +36,6 @@ export const getPosts = async () => {
 export const getPostById = async (id) => {
     // await sleep(500)
     // return posts.find((post) => post.id === id)
-    const response = await axios.get(`/posts/${id}`)
+    const response = await axios.get(`http://localhost:4000/posts/${id}`)
     return response.data
 }
