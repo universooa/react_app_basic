@@ -1,17 +1,5 @@
-version: "3.7"
-
+version: '3.7'
 services:
-  sample:
-    container_name: react-dockerize
+  react-app:
     build:
       context: .
-      dockerfile: Dockerfile
-    volumes:
-      - ".:/usr/src/app"
-      - "/usr/src/app/node_modules"
-    ports:
-      - "3000:3000"
-    environment:
-      - NODE_ENV=development
-    stdin_open: true
-    tty: true
