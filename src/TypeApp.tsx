@@ -4,6 +4,7 @@ import Greetings from './Greetings'
 import TsCounter from './TsCounter'
 import MyForm from './MyForm'
 import ReducerSample from './ReducerSample'
+import { SampleProvider } from './SampleContext'
 
 // eslint-disable-next-line react/function-component-definition
 const TypeApp: React.FC = () => {
@@ -22,7 +23,9 @@ const TypeApp: React.FC = () => {
 
             <MyForm onSubmit={onSubmit} />
 
-            <ReducerSample />
+            <SampleProvider>
+                <ReducerSample />
+            </SampleProvider>
         </>
     )
 }
