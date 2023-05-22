@@ -68,6 +68,7 @@ const expert: Developer = {
 type People = Person[]
 const people: People = [person, expert]
 
+// @ts-ignore
 type Color = 'red' | 'orange' | 'yellow'
 const color: Color = 'red'
 const colors: Color[] = ['red', 'orange']
