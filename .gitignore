@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+/nginx/html/build
 
 # misc
 .DS_Store
@@ -23,6 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 
 .gradle
-build
+nginx/html/build
 yarn.lock
 .idea
