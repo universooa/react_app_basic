@@ -4,8 +4,8 @@ WORKDIR "/usr/src/app"
 COPY ./package.json ./usr/src/app/package.json
 COPY ./package-lock.json ./usr/src/app/package-lock.json
 COPY ./ ./
-RUN yarn install
-RUN yarn build
+RUN npm install
+RUN npm run build
 
 ## builder 스테이지
 FROM nginx
