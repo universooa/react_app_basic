@@ -2,6 +2,7 @@
 FROM node:16 AS builder
 WORKDIR "/usr/src/app"
 COPY ./package.json ./usr/src/app/package.json
+COPY ./package-lock.json ./usr/src/app/package-lock.json
 COPY ./ ./
 RUN yarn install
 RUN yarn build

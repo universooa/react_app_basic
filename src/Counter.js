@@ -3,6 +3,7 @@ import { useReducer } from 'react'
 function init(initialState) {
     return { count: initialState }
 }
+
 function reducer(state, action) {
     switch (action.type) {
         case 'INCREMENT':

@@ -1,8 +1,4 @@
 function CatchTest({ user }) {
-    // if (!user) {
-    //     return null
-    // }
-
     return (
         <div>
             <div>

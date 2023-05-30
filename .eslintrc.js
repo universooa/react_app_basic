@@ -13,7 +13,7 @@ module.exports = {
         ecmaVersion: 6,
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint'],
+    plugins: ['react', '@typescript-eslint', 'prettier'],
     extends: [
         'plugin:react/recommended',
         'airbnb',
@@ -37,6 +37,7 @@ module.exports = {
         'default-param-last': 'off',
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
+        'prettier/prettier': 'error',
     },
     settings: {
         react: {
