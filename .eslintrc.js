@@ -37,7 +37,7 @@ module.exports = {
         'default-param-last': 'off',
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
-        'prettier/prettier': 'error',
+        'prettier/prettier': ['error', { endOfLine: 'auto' }],
     },
     settings: {
         react: {
