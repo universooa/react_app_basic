@@ -14,11 +14,9 @@ function CssTest() {
         setDialog(true)
     }
     const onConfirm = () => {
-        console.log('확인')
         setDialog(false)
     }
     const onCancel = () => {
-        console.log('취소')
         setDialog(false)
     }
     const onChange = (e) => {

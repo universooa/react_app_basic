@@ -24,7 +24,10 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/jsx-uses-react': 'off',
         'no-unused-vars': 'off',
-        'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+        'react/jsx-filename-extension': [
+            1,
+            { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
+        ],
         'no-param-reassign': 'off',
         'import/no-extraneous-dependencies': 'off',
         'global-require': 'off',
@@ -38,6 +41,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
         'prettier/prettier': ['error', { endOfLine: 'auto' }],
+        'no-console': 'off',
     },
     settings: {
         react: {
