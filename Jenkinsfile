@@ -21,15 +21,12 @@ pipeline{
             }
         }
 
-            stage('SCM') {
-                checkout scm
-              }
-              stage('SonarQube Analysis') {
-                def scannerHome = tool 'SonarScanner';
-                withSonarQubeEnv() {
-                  bat "${scannerHome}/bin/sonar-scanner"
-                }
-              }
+        stage('sonarqube') {
+         steps {
+             withSonarQubeEnv(credentialsId: 'sonar-react', installationName:'Sonar10.0') {
+
+             }
+         }
 
     }
 
