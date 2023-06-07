@@ -9,15 +9,15 @@ services:
     ports:
       - "80:80"
 
-#
-#  nginx:
-#    restart: always
-#    container_name: nginx
-#    build:
-#      context: ./nginx
-#      dockerfile: Dockerfile
-#    #    container_name: nginx
-#    #    image: "nginx:sua" # : 뒤는 tag
-#    ports:
-#      - "80:80"
+
+  nginx:
+    restart: always
+    container_name: nginx
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    #    container_name: nginx
+    #    image: "nginx:sua" # : 뒤는 tag
+    ports:
+      - "80:80"
 
