@@ -29,8 +29,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 도커 컴포즈 개발자 용 사용 -> docker-compose-dev
 
+### `docker rm -f react-app`
+
 ### `docker-compose -f docker-compose-prod.yml up --build`
 
+docker compose 실행하기 전 해당 container name을 지워줌
 도커 컴포즈 프로덕션 용 사용 -> docker-compose-prod
 
 
