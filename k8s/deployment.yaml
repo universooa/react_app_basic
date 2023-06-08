@@ -10,10 +10,10 @@ spec:
   template:
     metadata:
       labels:
-        app: nginx
+        app: nginx-app
     spec:
       containers:
-        - name: nginx
+        - name: nginx-container
           image: react-app-master-react-app
           ports:
-            - containerPort: 80
+            - containerPort: 3000
