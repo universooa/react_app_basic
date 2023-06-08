@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: nginx-svc
   labels:
-    app: nginx-app
+    app: nginx
 spec:
   selector:
-    app: nginx-app
+    app: nginx
   type: NodePort
   ports:
     - nodePort: 31000
