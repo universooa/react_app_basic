@@ -36,5 +36,5 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 docker compose 실행하기 전 해당 container name을 지워줌
 도커 컴포즈 프로덕션 용 사용 -> docker-compose-prod
 
-### `url창에 localhost를 입력하여 접속`
+### `url창에 http://localhost:3000/ 입력하여 접속`
 
