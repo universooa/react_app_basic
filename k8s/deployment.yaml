@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: nginx-container
-          image: react-app-master-react-app
+          image: react-app-master-react-nginx-app
           ports:
             - containerPort: 80
