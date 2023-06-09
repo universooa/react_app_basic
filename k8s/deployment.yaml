@@ -15,5 +15,6 @@ spec:
       containers:
         - name: react-nginx-app
           image: react-app-master-react-nginx-app
+          imagePullPolicy: Never
           ports:
             - containerPort: 80
