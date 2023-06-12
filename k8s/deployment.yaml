@@ -12,11 +12,11 @@ spec:
       labels:
         app: nginx
     spec:
-      imagePullSecrets:
-        - name: regcred
       containers:
         - name: react-nginx-app
-          image: react-app-master-react-nginx-app
+          image: seleniumsua/react-app-master-react-nginx-app
           imagePullPolicy: Always
           ports:
             - containerPort: 80
+      imagePullSecrets:
+        - name: regcred
