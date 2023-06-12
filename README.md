@@ -31,10 +31,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `docker rm -f react-app`
 
+docker compose 실행하기 전 해당 container name을 지워줌
+
 ### `docker-compose -f docker-compose-prod.yml up --build`
 
-docker compose 실행하기 전 해당 container name을 지워줌
-도커 컴포즈 프로덕션 용 사용 -> docker-compose-prod
+docker-compose-prod를 프로젝트 cmd 에서 실행할 경우 -> docker-compose-prod
+Dockerfile.prod 에서 cmd 'nginx -g daemonoff' ->foreground 실행
+
+### `docker-compose -f docker-compose-jenkins-prod.yml up --build`
+
+docker-compose-prod를 jenkins, argocd 연동일 경우 -> docker-compose-jenkins-prod
+cmd 'nginx' -> background 실행
 
 ### `url창에 http://localhost:3000/ 입력하여 접속`
 

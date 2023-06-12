@@ -1,10 +1,13 @@
 version: '3.7'
 services:
-  react-app:
+  react-nginx-app:
     restart: always
-    container_name: react-app
+    container_name: react-nginx-app
     build:
       context: .
       dockerfile: DockerfileJenkins.prod
     ports:
-      - "80:80"
+      - "3000:80"
+
+
+
