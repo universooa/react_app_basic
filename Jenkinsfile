@@ -18,6 +18,7 @@ pipeline{
             steps {
 //                 bat "npm install"
 //                 bat "npm run build"
+                bat "docker rm -f react-nginx-app"
                 bat "docker-compose -f docker-compose-prod.yml up --build"
                 bat "docker image tag react-app-master-react-nginx-app seleniumsua/react-app-master-react-nginx-app"
                 bat "docker push seleniumsua/react-app-master-react-nginx-app"
